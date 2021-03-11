@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ons-page id="home">
+    <script>
+        const openMenu = () => {
+            document.querySelector('#menu').open();
+        };
+    </script>
+
+    <ons-toolbar id="home-toolbar">
+        <div class="center">Pokemon</div>
+
+        <div class="left">
+            <ons-toolbar-button onclick="openMenu()">
+                <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-tabbar id="tabbar">
+        <ons-tab page="pokemon.html" label="Pokémon"></ons-tab>
+        <ons-tab page="saved.html" label="Saved"></ons-tab>
+    </ons-tabbar>
+</ons-page>
+
+
+</body>
+
+
+
+</html>
