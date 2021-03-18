@@ -1,0 +1,1 @@
+var permanentStorage = window.localStorage;
