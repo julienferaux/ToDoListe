@@ -6,7 +6,6 @@ function save(key,objet) {
     console.log(storage.getItem(key))
 }
 
-
-
-
-export { save };
+export default {
+    save
+};

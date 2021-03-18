@@ -51,7 +51,7 @@ myApp.controllers = {
 
         if (newTitle) {
           // If input title is not empty, create a new task.
-          task = {
+          let task = {
               title: newTitle,
               category: page.querySelector('#category-input').value,
               description: page.querySelector('#description-input').value,
@@ -68,8 +68,6 @@ myApp.controllers = {
           document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
-
-	  storage.setItem(newTitle,
         } else {
           // Show alert if the input title is empty.
           ons.notification.alert('You must provide a task title.');
