@@ -2,6 +2,8 @@
  * App Controllers. These controllers will be called on page initialization. *
  ***********************************************************************/
 
+import storage from "./localStorage.js";
+
 myApp.controllers = {
 
   //////////////////////////
@@ -49,21 +51,25 @@ myApp.controllers = {
 
         if (newTitle) {
           // If input title is not empty, create a new task.
-          myApp.services.tasks.create(
-            {
+          task = {
               title: newTitle,
               category: page.querySelector('#category-input').value,
               description: page.querySelector('#description-input').value,
               highlight: page.querySelector('#highlight-input').checked,
               urgent: page.querySelector('#urgent-input').checked
-            }
-          );
+            };
+
+	  storage.save(newTitle, task);
+	  document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
+	  console.log("Tache "+newTitle+" enregistrée");
 
           // Set selected category to 'All', refresh and pop page.
           document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
           document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
+
+	  storage.setItem(newTitle,
         } else {
           // Show alert if the input title is empty.
           ons.notification.alert('You must provide a task title.');
