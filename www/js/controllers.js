@@ -56,13 +56,14 @@ myApp.controllers = {
               urgent: page.querySelector('#urgent-input').checked
             };
 
-	  save(newTitle, task);
-	  document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
-	  console.log("Tache "+newTitle+" enregistrée");
+      	  save(task);
+      	  document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
+      	  console.log("Tache "+newTitle+" enregistrée");
 
           // Set selected category to 'All', refresh and pop page.
           document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
-          document.querySelector('#default-category-list ons-list-item').updateCategoryView();
+          list.forEach(myApp.services.tasks.create);
+          //document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
         } else {
