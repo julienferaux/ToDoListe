@@ -1,9 +1,6 @@
 /***********************************************************************
  * App Controllers. These controllers will be called on page initialization. *
  ***********************************************************************/
-
-import storage from "./localStorage.js";
-
 myApp.controllers = {
 
   //////////////////////////
@@ -59,7 +56,7 @@ myApp.controllers = {
               urgent: page.querySelector('#urgent-input').checked
             };
 
-	  storage.save(newTitle, task);
+	  save(newTitle, task);
 	  document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
 	  console.log("Tache "+newTitle+" enregistrée");
 
