@@ -62,8 +62,8 @@ myApp.controllers = {
 
           // Set selected category to 'All', refresh and pop page.
           document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
-          list.forEach(myApp.services.tasks.create);
-          console.log("creation liste")
+          myApp.services.tasks.create(task);
+          console.log("creation liste");
           //document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
