@@ -2,6 +2,7 @@ var storage = window.localStorage;
 
 var list = JSON.parse(storage.getItem('listeTaches'));
 if(!list){
+    console.log(list)
   let task1 = {
       title: "Tache1",
       category: "Categorie1",
@@ -31,6 +32,7 @@ function save(tache) {
     storage.removeItem('listeTaches');
     list.push(tache);
     storage.setItem('listeTaches',JSON.stringify(list));
+
 }
 
 function remove(tache) {
