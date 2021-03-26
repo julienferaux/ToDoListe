@@ -19,9 +19,25 @@
       </div>
     </ons-list-item>
     <ons-list-item modifier="nodivider">
+
+
+
+
       <div class="center">
         <ons-input id="category-input" type="text" placeholder="Category" float></ons-input>
+
+
+
+
+      <ons-select id="choose-sel" onchange="editSelects(event)">
+        <option value="basic">Basic</option>
+        <option value="material">Material</option>
+        <option value="underbar">Underbar</option>
+      </ons-select>
       </div>
+
+
+
     </ons-list-item>
     <ons-list-item modifier="nodivider">
       <div class="center">
@@ -53,4 +69,5 @@
   <ons-if platform="ios other">
     <ons-button modifier="large" component="button/save-task">Add New Task</ons-button>
   </ons-if>
+
 </ons-page>
