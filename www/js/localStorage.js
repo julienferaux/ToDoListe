@@ -40,3 +40,10 @@ function remove(tache) {
   delete list[list.indexOf(tache)];
   storage.setItem('listeTaches',JSON.stringify(list));
 }
+
+function removeAll(){
+    storage.removeItem('listeTaches');
+    list = [];
+    storage.setItem('listeTaches',JSON.stringify(list));
+    window.location.reload(true)
+}
