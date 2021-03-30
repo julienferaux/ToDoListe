@@ -116,6 +116,8 @@ myApp.services = {
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
+//console.log(taskItem.data);
+        remove(taskItem.data);
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
