@@ -45,5 +45,5 @@ function removeAll(){
     storage.removeItem('listeTaches');
     list = [];
     storage.setItem('listeTaches',JSON.stringify(list));
-    window.location.reload(true);
+    window.location.reload(true)
 }

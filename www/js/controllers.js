@@ -16,6 +16,17 @@ myApp.controllers = {
     Array.prototype.forEach.call(page.querySelectorAll('[component="button/new-task"]'), function(element) {
       element.onclick = function() {
         document.querySelector('#myNavigator').pushPage('html/new_task.html');
+
+        //Ajout de la liste Array
+        let child = document.createElement("option");
+        let element = document.getElementsByClassName('choose-sel');
+        child.value = "basic";
+        //Le texte entre les balises
+        child.innerText = "Exemple";
+        setTimeout(function(){
+          //Obligation d'attendre le chargement de la liste
+          element[0].firstChild.appendChild(child);
+        }, 100 )
       };
 
       element.show && element.show(); // Fix ons-fab in Safari.
