@@ -23,3 +23,10 @@ document.addEventListener('init', function(event) {
     }
   }
 });
+
+function editSelects (event) {
+  console.log(event.target.value)
+  console.log(document.querySelector('#category-input').getElementsByClassName("text-input")[0]);
+  document.querySelector('#category-input').setAttribute('value', event.target.value);
+
+}
